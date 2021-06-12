@@ -1,6 +1,6 @@
-#define Buton 9
+#define Buton 9  /// We make the definitions.
 #define Led 8
-int buton_durumu =0;
+int result =0;  /// We created a variable to see if button was pressed.
 
 void setup() {
   pinMode(Buton, INPUT);
@@ -10,11 +10,11 @@ void setup() {
 }
 
 void loop() {
-  buton_durumu = digitalRead(Buton);
-  if (buton_durumu ==1){
-    digitalWrite(Led,HIGH);
+  result = digitalRead(Buton);
+  if (result ==1){
     
-
+    digitalWrite(Led,HIGH);
+                                    /// Our led will flash when the button is pressed.
   }
   else{
     digitalWrite(Led,LOW);
