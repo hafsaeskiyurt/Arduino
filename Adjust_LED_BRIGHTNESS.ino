@@ -1,6 +1,7 @@
+
+
 #define pot A0
 #define LED 3
-
 
 void setup() {
   
