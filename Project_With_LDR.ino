@@ -4,45 +4,31 @@
 Servo servo;
 int a=90;     //This works like a counter.  
 void setup() {
-  
   Serial.begin(9600);
-  servo.attach(5);
-  
-  
+  servo.attach(5);  
  }
 
 void loop(){
-  Serial.print("A1:");   //In order to decide limits of LDRs, you can use serial port.
+  Serial.print("A1:");   //In order to decide limits of LDRs, you should use serial port because values can change according to light. 
   Serial.println(analogRead(A1));
   delay(500);
   Serial.print("A0:");
   Serial.println(analogRead(A0));
-  delay(500);
-  
-  
-  
+  delay(500); 
   if(analogRead(A0)>700 && analogRead(A1)<570){  /You can change numbers according to your LDR's values.
     while(a<160){    //This part is for slow rotation of the servo.
-    
     servo.write(a);
     a++;
-    delay(15);   
-    
-  } 6
-    
+    delay(15);     
+  }  
   }
   if (analogRead(A1)>570 && analogRead(A0)<700){
     while(a>20){   //This part is for slow rotation of the servo, too.
-    
     servo.write(a);
     a--;
-    delay(15);   
-    
-  }
-       
+    delay(15);     
+  }      
    
-  }
-  
-  
+  }  
       
 }
